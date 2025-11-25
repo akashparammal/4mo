@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>A Gift For You — Pink Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#ffeef8;
+      --bg2:#ffd6e8;
+      --accent:#ff6fa3;
+      --deep:#c41f6b;
+      --card:#fff6fb;
+      --glass: rgba(255,255,255,0.55);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(135deg,var(--bg1),var(--bg2));
+      color:var(--deep);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+
+    .card{
+      width:100%;
+      max-width:980px;
+      background:linear-gradient(180deg,var(--card),#fff);
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(196,31,107,0.12);
+      padding:28px;
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:24px;
+      align-items:center;
+      border:1px solid rgba(196,31,107,0.06);
+    }
+
+    @media (max-width:880px){
+      .card{grid-template-columns:1fr; padding:20px}
+    }
+
+    .left h1{
+      margin:0 0 12px 0;
+      font-size:42px;
+      line-height:1.02;
+      color:var(--deep);
+      letter-spacing:-0.5px;
+    }
+    .left p{margin:0 0 18px 0; color:#7a234a}
+
+    .cta{
+      display:inline-flex;
+      gap:12px;
+      align-items:center;
+      margin-top:12px;
+    }
+    .btn{
+      background:linear-gradient(90deg,var(--accent),#ff86ba);
+      color:white;
+      border:none;
+      padding:10px 18px;
+      border-radius:12px;
+      font-weight:600;
+      cursor:pointer;
+      box-shadow:0 6px 18px rgba(255,111,163,0.2);
+      text-decoration:none;
+      display:inline-block;
+    }
+    .btn.secondary{
+      background:transparent;
+      color:var(--deep);
+      border:1px solid rgba(196,31,107,0.08);
+      padding:8px 14px;
+      font-weight:500;
+    }
+
+    /* hearts grid */
+    .right{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .hearts{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .heart{
+      width:100px;
+      height:90px;
+      position:relative;
+      transform:scale(1);
+      transition:transform .25s ease;
+    }
+    .heart:hover{transform:scale(1.08)}
+
+    /* create a heart shape with CSS */
+    .heart:before,
+    .heart:after{
+      content:"";
+      position:absolute;
+      width:60px;
+      height:90px;
+      background:var(--accent);
+      border-radius:60px 60px 0 0;
+      transform:rotate(-45deg);
+      top:0;
+      left:20px;
+    }
+    .heart:after{
+      left:0;
+      transform:rotate(45deg);
+    }
+
+    /* small photo heart using SVG mask fallback */
+    .photo-heart{
+      width:120px;
+      height:120px;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 6px 20px rgba(196,31,107,0.12);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:var(--glass);
+      position:relative;
+    }
+
+    .photo-heart img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90"><path fill="white" d="M50 83s-4-3.2-9.6-7.7C26.7 62 6 46 6 29.3 6 18.8 14.4 11 24.2 11c7.9 0 12.3 4.8 15.8 9.2 1.9 2.6 3.9 5.2 4.9 6.5 1-1.3 3-3.9 4.9-6.5C63.5 15.8 68 11 75.9 11 85.6 11 94 18.8 94 29.3c0 16.6-20.8 32.7-34.4 45.9C54 79.7 50 83 50 83z"/></svg>');
+      mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90"><path fill="white" d="M50 83s-4-3.2-9.6-7.7C26.7 62 6 46 6 29.3 6 18.8 14.4 11 24.2 11c7.9 0 12.3 4.8 15.8 9.2 1.9 2.6 3.9 5.2 4.9 6.5 1-1.3 3-3.9 4.9-6.5C63.5 15.8 68 11 75.9 11 85.6 11 94 18.8 94 29.3c0 16.6-20.8 32.7-34.4 45.9C54 79.7 50 83 50 83z"/></svg>');
+      -webkit-mask-size:cover;
+      mask-size:cover;
+      -webkit-mask-repeat:no-repeat;
+      mask-repeat:no-repeat;
+      -webkit-mask-position:center;
+      mask-position:center;
+    }
+
+    .message{
+      padding:14px 16px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+      border-radius:12px;
+      border:1px solid rgba(196,31,107,0.06);
+    }
+
+    footer{font-size:12px;color:#8a2c53;margin-top:10px}
+
+  @keyframes pulse {
+  0% { opacity:0.6; transform:scale(1); }
+  50% { opacity:1; transform:scale(1.07); }
+  100% { opacity:0.6; transform:scale(1); }
+}
+
+    .section:not(:last-child)::after {
+        content: "♥";
+        display: block;
+        text-align: center;
+        margin: 25px 0;
+        opacity: 0.5;
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+</style>
+</head>
+<body>
+
+<!-- Envelope Opening Animation Overlay -->
+<div id="envelope-overlay" style="position:fixed; inset:0; background:#ffebf5; z-index:9999; display:flex; align-items:center; justify-content:center; flex-direction:column; animation: fadeOut 1.2s forwards 3.2s;">
+
+  <!-- Click to open text -->
+<div id="click-text" style="margin-bottom:20px; font-size:20px; color:#c41f6b; font-weight:600; animation:pulse 1.4s infinite;">Click to open 💖</div>
+
+<!-- Magical envelope -->
+  <div id="envelope" style="width:260px; height:180px; position:relative; cursor:pointer;">
+
+    <!-- Envelope back -->
+    <div style="position:absolute; inset:0; background:#ffc9dd; border-radius:10px; box-shadow:0 4px 20px rgba(0,0,0,0.1);"></div>
+
+    <!-- Envelope flap -->
+    <div id="flap" style="position:absolute; top:0; left:0; width:100%; height:50%; background:#ffb3ce; border-radius:10px 10px 0 0; transform-origin:top; "></div>
+
+    <!-- Heart poof -->
+    <div id="heart-poof" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%) scale(0); font-size:50px; color:#ff3f88; ">
+      ❤️
+    </div>
+  </div>
+
+  <!-- Sparkles -->
+  <div style="margin-top:20px; font-size:22px; color:#d22f6c; opacity:0; ">✨</div>
+</div>
+
+<style>
+@keyframes openFlap {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(-150deg); }
+}
+
+@keyframes heartPop {
+  0% { transform:translate(-50%, -50%) scale(0); opacity:0; }
+  100% { transform:translate(-50%, -70%) scale(1); opacity:1; }
+}
+
+@keyframes sparkleFade {
+  0% { opacity:0; }
+  100% { opacity:1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity:1; }
+  100% { opacity:0; pointer-events:none; }
+}
+</style>
+
+<script>
+// Click to open envelope
+const overlay = document.getElementById('envelope-overlay');
+const envelope = document.getElementById('envelope');
+
+envelope.addEventListener('click', () => {
+  document.getElementById('flap').style.animation = 'openFlap 1.2s forwards';
+  document.getElementById('heart-poof').style.animation = 'heartPop 0.6s forwards 1s';
+  overlay.querySelector('div[style*="font-size:22px"]').style.animation = 'sparkleFade 1s forwards 1.4s';
+
+  setTimeout(() => {
+    overlay.style.animation = 'fadeOut 1.2s forwards';
+    setTimeout(() => overlay.style.display = 'none', 1300);
+  }, 1800);
+});
+</script>
+
+<body style="background:#fff4f8; padding:0; display:block;">
+
+  <header style="text-align:center; padding:60px 20px; color:var(--deep); font-family:'Poppins';">
+    <h1 style="font-size:64px; margin:0; font-weight:600; font-family:'Poppins'; letter-spacing:-1px;">My Love Letter To You 💌</h1>
+    <p style="font-size:20px; margin-top:12px; font-style:italic; color:#9a3a60;">from my heart to yours</p>
+  </header>
+
+  <!-- Love-letter styled paper -->
+  <section style="max-width:900px; margin:40px auto; background:#fffdf9; padding:50px; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,0.05); border:1px solid #f3e2e2; position:relative; font-family: 'Poppins'; line-height:1.8; color:#7a234a;">
+
+    <!-- paper texture effect -->
+    <div style="position:absolute; top:0; left:0; right:0; bottom:0; background:url('https://www.transparenttextures.com/patterns/paper-fibers.png'); opacity:0.35; border-radius:16px; pointer-events:none;"></div>
+
+    <h2 style="font-size:38px; margin-top:0; color:#c41f6b; font-weight:600;">My Letter To You</h2>
+    <p style="font-size:20px; position:relative; z-index:2;">
+      Write your long heartfelt message here, as if you're writing an intimate letter — slow, warm, tender. This entire space is your envelope of love. ❤️ You can make this as long and poetic as you'd like, and the background will look like soft letter paper.
+    </p>
+  </section>
+
+  <!-- Polaroid style images -->
+  <section style="max-width:900px; margin:60px auto; text-align:center;">
+    <h2 style="font-size:36px; color:#c41f6b; margin-bottom:20px;">Our Memories Together 📷</h2>
+
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
+      <div style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=60" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
+        <p style="margin:10px 0 0; font-size:14px; color:#7a234a; font-style:italic;">A moment I'll always hold close.</p>
+      </div>
+
+      <div style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=60" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
+        <p style="margin:10px 0 0; font-size:14px; color:#7a234a; font-style:italic;">Your smile, my favorite view.</p>
+      </div>
+
+      <div style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
+        <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=800&q=60" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
+        <p style="margin:10px 0 0; font-size:14px; color:#7a234a; font-style:italic;">Frozen in time, but forever warm.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Second letter section -->
+  <section style="max-width:900px; margin:60px auto; background:#fffdf9; padding:50px; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,0.05); border:1px solid #f3e2e2; position:relative; font-family:'Poppins'; line-height:1.8; color:#7a234a;">
+
+    <div style="position:absolute; top:0; left:0; right:0; bottom:0; background:url('https://www.transparenttextures.com/patterns/paper-fibers.png'); opacity:0.35; border-radius:16px; pointer-events:none;"></div>
+
+    <h2 style="font-size:38px; margin-top:0; color:#c41f6b; font-weight:600;">Another Page of Us</h2>
+    <p style="font-size:20px; position:relative; z-index:2;">
+      Add another message, poem, or story — like turning the next page in your own personal love-letter book.
+    </p>
+
+    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:20px;">
+      <div style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=60" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
+        <p style="margin:10px 0 0; font-size:14px; color:#7a234a; font-style:italic;">Every memory feels like poetry.</p>
+      </div>
+
+      <div style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=60" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
+        <p style="margin:10px 0 0; font-size:14px; color:#7a234a; font-style:italic;">You make the ordinary feel magical.</p>
+      </div>
+    </div>
+  </section>
+
+    <!-- Extra Photo Section -->
+  <section style="max-width:900px; margin:60px auto; text-align:center;">
+    <h2 style="font-size:36px; color:#c41f6b; margin-bottom:20px;">More Moments I Love With You 💞</h2>
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
+
+      <div style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
+        <img src="https://via.placeholder.com/300x300?text=Your+Photo+Here" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
+        <p style="margin:10px 0 0; font-size:14px; color:#7a234a; font-style:italic;">Caption for this memory.</p>
+      </div>
+
+      <div style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
+        <img src="https://via.placeholder.com/300x300?text=Your+Photo+Here" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
+        <p style="margin:10px 0 0; font-size:14px; color:#7a234a; font-style:italic;">Another memory worth keeping.</p>
+      </div>
+
+      <div style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
+        <img src="https://via.placeholder.com/300x300?text=Your+Photo+Here" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
+        <p style="margin:10px 0 0; font-size:14px; color:#7a234a; font-style:italic;">A moment that means so much.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer style="text-align:center; padding:40px; color:#8a2c53; font-size:16px; font-style:italic;">
+    Made with ♥ — A Love Letter Just For You
+  </footer>
+    <div class="section">
+        <p>Your new section text here...</p>
+    </div>
+    <div class="section">
+        <p>Another section you can write in...</p>
+    </div>
+</body>
+</html>
