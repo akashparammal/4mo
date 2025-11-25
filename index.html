@@ -28,12 +28,7 @@
       justify-content:center;
       padding:32px;
     }
-  .card img {
-    width: 100%;
-    height: 250px;        /* Forces uniform height */
-    object-fit: cover;    /* Crops the image beautifully */
-    border-radius: 12px;
-    }
+
     .card{
       width:100%;
       max-width:980px;
@@ -182,6 +177,24 @@
         font-size: 20px;
         letter-spacing: 2px;
     }
+
+img.memory-fixed {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.polaroid {
+    background: white !important;
+    padding: 16px !important;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    border: 1px solid #f2f2f2;
+    transform: rotate(-1deg);
+}
+
 </style>
 </head>
 <body>
@@ -253,8 +266,8 @@ envelope.addEventListener('click', () => {
 <body style="background:#fff4f8; padding:0; display:block;">
 
   <header style="text-align:center; padding:60px 20px; color:var(--deep); font-family:'Poppins';">
-    <h1 style="font-size:64px; margin:0; font-weight:600; font-family:'Poppins'; letter-spacing:-1px;">HAPPY 4 MONTHS MY PRETTY GIRLLL 💌</h1>
-    <p style="font-size:20px; margin-top:12px; font-style:italic; color:#9a3a60;">from da goat</p>
+    <h1 style="font-size:64px; margin:0; font-weight:600; font-family:'Poppins'; letter-spacing:-1px;">My Love Letter To You 💌</h1>
+    <p style="font-size:20px; margin-top:12px; font-style:italic; color:#9a3a60;">from my heart to yours</p>
   </header>
 
   <!-- Love-letter styled paper -->
@@ -263,9 +276,9 @@ envelope.addEventListener('click', () => {
     <!-- paper texture effect -->
     <div style="position:absolute; top:0; left:0; right:0; bottom:0; background:url('https://www.transparenttextures.com/patterns/paper-fibers.png'); opacity:0.35; border-radius:16px; pointer-events:none;"></div>
 
-    <h2 style="font-size:38px; margin-top:0; color:#c41f6b; font-weight:600;">My love...</h2>
+    <h2 style="font-size:38px; margin-top:0; color:#c41f6b; font-weight:600;">My Letter To You</h2>
     <p style="font-size:20px; position:relative; z-index:2;">
-      Happy 4 months baby!!! I can’t even begin to tell you how grateful I am for you. I LOVE YOU SO MUCH LIKE I CANT EVEN DESCRIBE IT. I'm eternally grateful to you and for being by my side for these past 4 months and these months consisted of so many days that I'll remember forever. Whether its the good days that we spent laughing, cuddling, kissing, sleeping, eating, ragebaiting, masterbaiting, annoying each other blah blah or the sad days where we may have went to sleep upset or just missed each other too much, I can guarantee that throughout all of the good and bad days, I am so so so soooo grateful that I can be a boyfriend to a person so wonderful like you. ❤️ 
+      Write your long heartfelt message here, as if you're writing an intimate letter — slow, warm, tender. This entire space is your envelope of love. ❤️ You can make this as long and poetic as you'd like, and the background will look like soft letter paper.
     </p>
   </section>
 
@@ -274,18 +287,18 @@ envelope.addEventListener('click', () => {
     <h2 style="font-size:36px; color:#c41f6b; margin-bottom:20px;">Our Memories Together 📷</h2>
 
     <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
-      <div style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
-        <img src="IMG_2843.jpg" class="pic" />
+      <div class="polaroid" style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=60" class="memory-fixed" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
         <p style="margin:10px 0 0; font-size:14px; color:#7a234a; font-style:italic;">A moment I'll always hold close.</p>
       </div>
 
-      <div style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
-        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=60" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
+      <div class="polaroid" style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=60" class="memory-fixed" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
         <p style="margin:10px 0 0; font-size:14px; color:#7a234a; font-style:italic;">Your smile, my favorite view.</p>
       </div>
 
-      <div style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
-        <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=800&q=60" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
+      <div class="polaroid" style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
+        <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=800&q=60" class="memory-fixed" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
         <p style="margin:10px 0 0; font-size:14px; color:#7a234a; font-style:italic;">Frozen in time, but forever warm.</p>
       </div>
     </div>
@@ -302,13 +315,13 @@ envelope.addEventListener('click', () => {
     </p>
 
     <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:20px;">
-      <div style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
-        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=60" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
+      <div class="polaroid" style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=60" class="memory-fixed" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
         <p style="margin:10px 0 0; font-size:14px; color:#7a234a; font-style:italic;">Every memory feels like poetry.</p>
       </div>
 
-      <div style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
-        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=60" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
+      <div class="polaroid" style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=60" class="memory-fixed" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
         <p style="margin:10px 0 0; font-size:14px; color:#7a234a; font-style:italic;">You make the ordinary feel magical.</p>
       </div>
     </div>
@@ -319,18 +332,18 @@ envelope.addEventListener('click', () => {
     <h2 style="font-size:36px; color:#c41f6b; margin-bottom:20px;">More Moments I Love With You 💞</h2>
     <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
 
-      <div style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
-        <img src="https://via.placeholder.com/300x300?text=Your+Photo+Here" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
+      <div class="polaroid" style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
+        <img src="https://via.placeholder.com/300x300?text=Your+Photo+Here" class="memory-fixed" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
         <p style="margin:10px 0 0; font-size:14px; color:#7a234a; font-style:italic;">Caption for this memory.</p>
       </div>
 
-      <div style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
-        <img src="https://via.placeholder.com/300x300?text=Your+Photo+Here" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
+      <div class="polaroid" style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
+        <img src="https://via.placeholder.com/300x300?text=Your+Photo+Here" class="memory-fixed" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
         <p style="margin:10px 0 0; font-size:14px; color:#7a234a; font-style:italic;">Another memory worth keeping.</p>
       </div>
 
-      <div style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
-        <img src="https://via.placeholder.com/300x300?text=Your+Photo+Here" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
+      <div class="polaroid" style="width:220px; background:white; padding:12px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); font-family:'Poppins';">
+        <img src="https://via.placeholder.com/300x300?text=Your+Photo+Here" class="memory-fixed" style="width:100%; height:220px; object-fit:cover; border-radius:6px;">
         <p style="margin:10px 0 0; font-size:14px; color:#7a234a; font-style:italic;">A moment that means so much.</p>
       </div>
 
